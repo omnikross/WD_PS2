@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<p>
+			<h5>Entry</h5>
+			<input type="text" name="entry">
+			<h5>Apartments</h5>
+			<input type="text" name="apartments">
+			<h5>Floor</h5>	
+			<input type="text" name="floor">
+			<h5>Looking for</h5>
+			<input type="text" name="looking">
+		</p>
+		<p>
+			<input type="button" value="Click" onclick="lookApartment(form)">
+		</p>
+	</form>
+	<script >
+		function lookApartment(form){
+			var entry      = form.entry.value;
+			var floor      = form.floor.value;
+			var apartments = form.apartments.value;
+			var looking    = form.looking.value;
+			var x = (looking / apartments |0);
+			x++;
+			var y = (x / floor |0);
+			var z = x % floor;
+			y++;
+			alert('Entry: ' + y + '\n' + 'Floor: ' + z);
+		}
+	</script>
+</body>
+</html>

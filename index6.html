@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+</head>
+<body>
+	<form>
+		<p>
+		<h3>Input date like "October 13, 2014 11:13:00"</h3>
+			<input type="text" name="firstDate">
+			<input type="text" name="secondDate">
+		</p>
+		<p>
+			<input type="button" value="Click" onclick="timeFromFirst(form)">
+		</p>
+	</form>
+	<script>
+	function timeFromFirst(form){
+		var first  = new Date(form.firstDate.value);
+		var second = new Date(form.secondDate.value);
+		alert(second - first);
+	}
+	</script>
+</body>
+
+</html>

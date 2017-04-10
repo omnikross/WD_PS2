@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My second task for Level Up<</title>
+</head>
+<body>
+	<script >
+		var start = -1000;
+		var result = [];
+		var sum = 0;
+		while (start <= 1000) {
+			result.push(start++);
+		}
+		for(var i = 0; i <result.length; i++){
+			var x = result[i] % 10;
+			if(x == 2 || x == 3 || x == 7 || x == - 2 || x == - 3 || x == - 7){
+				sum += (result[i]);
+			}
+		}
+		alert(sum);
+	</script>
+</body>
+</html>

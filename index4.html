@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My fourth task for Level Up</title>
+</head>
+<body>
+	<form>
+		<p>
+			<input type="text" name="addDate">
+		</p>
+		<p>
+			<input type="button" value="Click" onclick="calcDate(form)">
+		</p>
+	</form>
+	<script>
+		function calcDate(form){
+			var sec = form.addDate.value;
+			var x = (sec / 3600 | 0) + 'h.' + (sec / 60 % 60 |0) + 'm.' + (sec % 60) + 's.';
+			alert(x);
+		}
+	</script>
+</body>
+</html>

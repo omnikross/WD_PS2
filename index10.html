@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<p>
+			<input type="text" name="Number">
+		</p>
+		<p>
+			<input type="button" value="Click" onclick="sumNumber(form)">
+		</p>
+	</form>
+	<script>
+	function sumNumber(form){
+		var userKey = form.Number.value;
+		alert(eval(userKey.toString().split('').join('+')));
+	}
+	</script>
+</body>
+</html>
