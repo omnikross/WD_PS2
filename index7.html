@@ -1,15 +1,204 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 <form>
+	<h3>Set date like "2014-12-31"</h3>
 	<input type="text" name ="Date">
-	<input type="button" value="click">
+	<input type="button" value="click" onclick="zodiacSigns(form)">
 </form>
 <script>
-	
+	function zodiacSigns(form){
+		var date  = new Date(form.Date.value);
+		var day   = (date.getDate());
+		var month = (date.getMonth()+1);
+		if(month  == 12 && day >= 22){
+			document.write('Козерог' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://xcook.info/sites/default/files/vopros-otvet/3/kak-ljubit-kozerog6.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 01 && day <= 19){
+			document.write('Козерог' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://xcook.info/sites/default/files/vopros-otvet/3/kak-ljubit-kozerog6.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 01 && day >= 20){
+			document.write('Водолей' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://poputchik5.ru/wp-content/uploads/2016/12/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 02 && day <= 19){
+			document.write('Водолей' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://poputchik5.ru/wp-content/uploads/2016/12/%D0%B2%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 02 && day >= 20){
+			document.write('Рыбы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://kakgadat.ru/wp-content/uploads/2013/12/8748373.jpeg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		} 
+		else if(month == 03 && day <= 21){
+			document.write('Рыбы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://kakgadat.ru/wp-content/uploads/2013/12/8748373.jpeg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 03 && day >= 22){
+			document.write('Овен' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://feme.ua/upload/iblock/13e/j%D0%BE%D0%B2%D0%B5%D0%BD.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 04 && day <= 21){
+			document.write('Овен' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://feme.ua/upload/iblock/13e/j%D0%BE%D0%B2%D0%B5%D0%BD.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 04 && day >= 22){
+			document.write('Телец' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.sunhome.ru/i/wallpapers/82/telec.orig.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 05 && day <= 21){
+			document.write('Телец' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.sunhome.ru/i/wallpapers/82/telec.orig.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 05 && day >= 22){
+			document.write('Близнецы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://tortugas.ru/wp-content/uploads/2013/08/1218820578_downhouse.info_geminis_1024.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 06 && day <= 21){
+			document.write('Близнецы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://tortugas.ru/wp-content/uploads/2013/08/1218820578_downhouse.info_geminis_1024.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 06 && day >= 22){
+			document.write('Рак' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.prisnilos.su/kcfinder/upload/image/%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D1%80%D0%B0%D0%BA%202.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 07 && day <= 21){
+			document.write('Рак' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.prisnilos.su/kcfinder/upload/image/%D0%B7%D0%BD%D0%B0%D0%BA%D0%B8%20%D1%80%D0%B0%D0%BA%202.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 07 && day >= 22){
+			document.write('Лев' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.allwomens.ru/uploads/posts/2010-04/1272015314_xarakteristika_znaka_zodiaka_lev.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 08 && day <= 21){
+			document.write('Лев' + '<br>');	
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://www.allwomens.ru/uploads/posts/2010-04/1272015314_xarakteristika_znaka_zodiaka_lev.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);	
+		}
+		else if(month == 08 && day >= 22){
+			document.write('Дева' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://astro-project.ru/wp-content/uploads/2014/11/16162413.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 09 && day <= 21){
+			document.write('Дева' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://astro-project.ru/wp-content/uploads/2014/11/16162413.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 09 && day >= 22){
+			document.write('Весы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://mibius.com.ua/images/stories/Goroskop_harakterisiki/Libra.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 10 && day <= 21){
+			document.write('Весы' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://mibius.com.ua/images/stories/Goroskop_harakterisiki/Libra.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 10 && day >= 22){
+			document.write('Скорпион' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://tortugas.ru/wp-content/uploads/2013/08/600x6001233952357.jpeg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else if(month == 11 && day <= 20){
+			document.write('Скорпион' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://tortugas.ru/wp-content/uploads/2013/08/600x6001233952357.jpeg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+		else{
+			document.write('Стрелец' + '<br>');
+			var x = document.createElement("IMG");
+			x.setAttribute("src", "http://xcook.info/sites/default/files/vopros-otvet/3/kak-ljubit-strelec6.jpg");
+			x.setAttribute("width", "304");
+			x.setAttribute("height", "228");
+			document.body.appendChild(x);
+		}
+	}
 </script>
 </body>
 </html>

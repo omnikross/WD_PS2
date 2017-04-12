@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 	<form>
 		<p>
-			<h5>Entry</h5>
+			<h5>Ведите кол-во подъездов:</h5>
 			<input type="text" name="entry">
-			<h5>Apartments</h5>
+			<h5>Введите кол-во квартир на этаже:</h5>
 			<input type="text" name="apartments">
-			<h5>Floor</h5>	
+			<h5>Введите количество этажей в подъезде:</h5>	
 			<input type="text" name="floor">
-			<h5>Looking for</h5>
+			<h5>Введите номер квартиры, которую ищите:</h5>
 			<input type="text" name="looking">
 		</p>
 		<p>
@@ -30,7 +30,7 @@
 			var y = (x / floor |0);
 			var z = x % floor;
 			y++;
-			alert('Entry: ' + y + '\n' + 'Floor: ' + z);
+			alert('Подъезд: ' + y + '\n' + 'Этаж: ' + z);
 		}
 	</script>
 </body>

@@ -17,9 +17,9 @@
 	</form>
 	<script>
 	function timeFromFirst(form){
-		var first  = new Date(form.firstDate.value);
+		var first  = new Date.prototype.getTime(form.firstDate.value);
 		var second = new Date(form.secondDate.value);
-		alert(second - first);
+		alert(first);
 	}
 	</script>
 </body>

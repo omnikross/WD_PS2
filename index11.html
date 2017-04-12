@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<textarea rows="4" cols="50" name="links"></textarea>
+ <p><input type="submit" value="Отправить" onclick="textarea"></p>
+<script>
+var textarea = body.links.value;
+textarea.value = textarea.value.split("\n").sort().join("\n");
+alert(textarea);
+</script>
+</body>
+</html>

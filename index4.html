@@ -6,7 +6,7 @@
 <body>
 	<form>
 		<p>
-			<input type="text" name="addDate">
+			<input type="text" name="time">
 		</p>
 		<p>
 			<input type="button" value="Click" onclick="calcDate(form)">
@@ -14,10 +14,17 @@
 	</form>
 	<script>
 		function calcDate(form){
-			var sec = form.addDate.value;
-			var x = (sec / 3600 | 0) + 'h.' + (sec / 60 % 60 |0) + 'm.' + (sec % 60) + 's.';
-			alert(x);
+			var sec = form.time.value;
+			var h = (sec / 3600 | 0);
+			var m = (sec / 60 % 60 |0); 
+			var s = (sec % 60);
+			if (h < 10 || m < 10){
+				alert('0' + h + 'h.' + '0' + m + 'm.' + s + 's.')
+			}
+			else{
+			alert(h + 'h.' + m + 'm.' + s + 's.');
 		}
+	}
 	</script>
 </body>
 </html>
