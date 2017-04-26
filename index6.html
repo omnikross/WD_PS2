@@ -7,20 +7,36 @@
 <body>
 	<form>
 		<p>
-		<h3>Input date like "October 13, 2014 11:13:00"</h3>
-			<input type="text" name="firstDate">
-			<input type="text" name="secondDate">
+			<h3>Input date like "October 13, 2014 11:13:00"</h3>
+			<input type="datetime-local" name="firstDate">
+			<input type="datetime-local" name="secondDate">
 		</p>
 		<p>
 			<input type="button" value="Click" onclick="timeFromFirst(form)">
 		</p>
 	</form>
 	<script>
-	function timeFromFirst(form){
-		var first  = new Date.prototype.getTime(form.firstDate.value);
-		var second = new Date(form.secondDate.value);
-		alert(first);
-	}
+		function timeFromFirst(form){
+			var first  = new Date(form.firstDate.value).getTime();
+			var second = new Date(form.secondDate.value).getTime();
+
+			var differ = Math.abs(second - first);	
+			var x = differ / 1000;
+					
+			var minutes = Math.floor(x / 60);
+			x = x % 60;
+			var hours   = Math.floor(minutes / 60);
+			minutes = minutes % 60;
+			var days   = Math.floor(hours / 24 );
+			hours = hours % 24;
+			var months  = Math.floor(days / 30);
+			days = days % 30;
+			var years   = Math.floor(months / 12);
+			months = months % 12;
+		
+			console.log(years + ' Years, '  +  months + ' months, ' + days + ' days, ' + hours + ' hours, ' + minutes + ' minutes.');
+
+		}
 	</script>
 </body>
 

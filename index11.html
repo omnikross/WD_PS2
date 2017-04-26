@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-<textarea rows="4" cols="50" name="links"></textarea>
- <p><input type="submit" value="Отправить" onclick="textarea"></p>
-<script>
-var textarea = body.links.value;
-textarea.value = textarea.value.split("\n").sort().join("\n");
-alert(textarea);
-</script>
+	<form>
+		<textarea rows="8" cols="60" id="text"></textarea>
+		<p><input type="submit" value="Отправить" onclick="textArea(form)"></p>
+	</form>
+	<script>
+		function textArea(form) {
+			var processed = form.text.value.split('\n').map(function(processed) {
+				return processed.trim().replace(/^http(s):\/\//, '');
+			}).filter(function(processed) {
+				return processed;
+			}).sort().join('\n');
+			document.getElementById('text').value = processed; 
+			//alert(processed);
+		}
+	</script>
 </body>
 </html>

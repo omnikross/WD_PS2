@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<form>
+		<form>
+			<p>
+				<h3>Input date like "October 13, 2014 11:13:00"</h3>
+				<input type="datetime-local" name="firstDate">
+				<input type="datetime-local" name="secondDate">
+			</p>
+			<p>
+				<input type="button" value="Click" onclick="timeFromFirst(form)">
+			</p>
+		</form>
+	</form>
+	<script>
+		function timeFromFirst(form){
+			var first  = new Date(form.firstDate.value).getTime();
+			var second = new Date(form.secondDate.value).getTime();
+
+			var differ = Math.abs(second - first);	
+			var x = differ / 1000;
+			var second = Math.round(x % 60);
+			x /= 60; 
+			var minutes = Math.round(x % 60);
+			x /= 60;
+			var hours = Math.round(x % 24);
+			x /= 24;
+			var days = Math.round(x % 30);
+			x /= 30;
+			var months = Math.round(x % 12);
+			x /= 12;
+			var years = Math.round(x);
+			
+
+			console.log(years + ' Years, ' +  months + ' months, ' + days + ' days, ' + hours + ' hours, ' + minutes + ' minutes.');
+		}
+
+	</script>
+</body>
+</html> 

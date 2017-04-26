@@ -30,6 +30,9 @@
 			var y = (x / floor |0);
 			var z = x % floor;
 			y++;
+			if(z === 0){
+				z++;
+			}
 			alert('Подъезд: ' + y + '\n' + 'Этаж: ' + z);
 		}
 	</script>

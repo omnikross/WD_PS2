@@ -18,11 +18,17 @@
 			var h = (sec / 3600 | 0);
 			var m = (sec / 60 % 60 |0); 
 			var s = (sec % 60);
-			if (h < 10 || m < 10){
-				alert('0' + h + 'h.' + '0' + m + 'm.' + s + 's.')
+			if (h < 10 && m < 10){
+				document.write('0' + h + ':' + '0' + m + ':' + s);
+			}
+			else if(h < 10){
+				document.write('0' + h + ':' + m + ':' + s);
+			}
+			else if(m < 10){
+				document.write(h + ':' + '0' + m + ':' + s);
 			}
 			else{
-			alert(h + 'h.' + m + 'm.' + s + 's.');
+				document.write(h + ':' + m + ':' + s);
 		}
 	}
 	</script>
