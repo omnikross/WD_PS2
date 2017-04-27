@@ -10,30 +10,39 @@
 			<input type="text" name="entry">
 			<h5>Введите кол-во квартир на этаже:</h5>
 			<input type="text" name="apartments">
-			<h5>Введите количество этажей в подъезде:</h5>	
+			<h5>Введите количество этажей в подъезде:</h5>
 			<input type="text" name="floor">
 			<h5>Введите номер квартиры, которую ищите:</h5>
 			<input type="text" name="looking">
 		</p>
 		<p>
-			<input type="button" value="Click" onclick="lookApartment(form)">
+			<button type="button" onclick="lookForApartment(form)">
+				Find
+			</button>
 		</p>
-	</form> 
+		<p id="result"></p>
+	</form>
 	<script >
-		function lookApartment(form){
-			var entry      = form.entry.value;
-			var floor      = form.floor.value;
-			var apartments = form.apartments.value;
-			var looking    = form.looking.value;
-			var x = (looking / apartments |0);
-			x++;
-			var y = (x / floor |0);
-			var z = x % floor;
-			y++;
-			if(z === 0){
-				z++;
+		function lookForApartment(form) {
+			var entrances  = form.entry.value;
+			var floorsPerEntrance = form.floor.value;
+			var apartmentsPerFloor = form.apartments.value;
+			var looking = form.looking.value;
+
+			var result = '', floor, entrance;
+		  var flatsPerEntrance = apartmentsPerFloor * floorsPerEntrance;
+			var flatsPerHouse = flatsPerEntrance * entrances;
+
+			if (looking > flatsPerHouse) {
+				result = 'Incorrect flat number';
+			} else {
+				floor = Math.ceil(looking / apartmentsPerFloor);
+				entrance = Math.ceil(floor / floorsPerEntrance);
+				floor -= (entrance - 1) * floorsPerEntrance;
 			}
-			alert('Подъезд: ' + y + '\n' + 'Этаж: ' + z);
+
+			result = 'Entrance: ' + entrance + '. Floor: ' + floor;
+			document.getElementById('result').innerHTML = result;
 		}
 	</script>
 </body>

@@ -5,18 +5,34 @@
 </head>
 <body>
 	<form>
-		<textarea rows="8" cols="60" id="text"></textarea>
-		<p><input type="submit" value="Отправить" onclick="textArea(form)"></p>
+		<textarea
+			rows="8"
+			cols="60"
+			id="text"
+			name="links"
+			onblur="result.innerHTML = getList(links.value)"></textarea>
+		<p>
+			<output name="result"></output>
+		</p>
 	</form>
 	<script>
-		function textArea(form) {
-			var processed = form.text.value.split('\n').map(function(processed) {
-				return processed.trim().replace(/^http(s):\/\//, '');
-			}).filter(function(processed) {
-				return processed;
-			}).sort().join('\n');
-			 
-			alert(processed);
+		function getList(links) {
+			var result = links
+				.split(',')
+				.map(function(l) {
+					l = l.trim().replace(/^http(s)?:\/\//, '');
+					return l;
+				})
+				.sort()
+				.join('<br>');
+
+			// var processed = links.split('\n').map(function(processed) {
+			// 	return processed.trim().replace(/^http(s):\/\//, '');
+			// }).filter(function(processed) {
+			// 	return processed;
+			// }).sort().join('\n');
+
+			return result;
 		}
 	</script>
 </body>

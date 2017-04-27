@@ -6,17 +6,23 @@
 <body>
 	<form>
 		<p>
-			<input type="text" name="Number"> 
+			<input type="text" name="number">
 		</p>
 		<p>
-			<input type="button" value="Click" onclick="sumNumber(form)">
+			<button
+				type="button"
+				onclick="result.value = sumNumber(number.value)">
+				Calculate
+			</button>
+		</p>
+		<p>
+			<output name="result"></output>
 		</p>
 	</form>
 	<script>
-	function sumNumber(form){
-		var userKey = form.Number.value;
-		alert(eval(userKey.toString().split('').join('+')));
-	}
+		function sumNumber(num) {
+			return eval(num.toString().split('').join('+'));
+		}
 	</script>
 </body>
 </html>

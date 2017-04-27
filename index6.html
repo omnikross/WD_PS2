@@ -17,23 +17,46 @@
 	</form>
 	<script>
 		function timeFromFirst(form){
-			var first  = new Date(form.firstDate.value).getTime();
-			var second = new Date(form.secondDate.value).getTime();
- 
-			var differ = Math.abs(second - first);	
-			var x = differ / 1000;
-					
-			var minutes = Math.floor(x / 60);
-			x = x % 60;
-			var hours   = Math.floor(minutes / 60);
-			minutes = minutes % 60;
-			var days   = Math.floor(hours / 24 );
-			hours = hours % 24;
-			var months  = Math.floor(days / 30);
-			days = days % 30;
-			var years   = Math.floor(months / 12);
-			months = months % 12;
-		
+			var first  = new Date(form.firstDate.value);
+			var second = new Date(form.secondDate.value);
+
+			var interval = Math.abs(second - first);
+
+			var milsecPerMinute = 1000 * 60;
+		  var milsecPerHour = milsecPerMinute * 60;
+		  var milsecPerDay = milsecPerHour * 24;
+		  var milsecPerMonth = milsecPerDay * 30;
+		  var milsecPerYear = milsecPerDay * 365;
+
+		  var years = Math.floor(interval / milsecPerYear);
+		  interval = interval - (years * milsecPerYear);
+
+		  var months = Math.floor(interval / milsecPerMonth);
+		  interval = interval - (months * milsecPerMonth);
+
+		  var days = Math.floor(interval / milsecPerDay);
+		  interval = interval - (days * milsecPerDay);
+
+		  var hours = Math.floor(interval / milsecPerHour);
+		  interval = interval - (hours * milsecPerHour);
+
+		  var minutes = Math.floor(interval / milsecPerMinute);
+		  interval = interval - (minutes * milsecPerMinute);
+
+		  var seconds = Math.floor(interval / 1000);
+			// var x = differ / 1000;
+			//
+			// var minutes = Math.floor(x / 60);
+			// x = x % 60;
+			// var hours   = Math.floor(minutes / 60);
+			// minutes = minutes % 60;
+			// var days   = Math.floor(hours / 24 );
+			// hours = hours % 24;
+			// var months  = Math.floor(days / 30);
+			// days = days % 30;
+			// var years   = Math.floor(months / 12);
+			// months = months % 12;
+
 			console.log(years + ' Years, '  +  months + ' months, ' + days + ' days, ' + hours + ' hours, ' + minutes + ' minutes.');
 
 		}

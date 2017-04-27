@@ -6,45 +6,58 @@
 <body>
 	<form>
 		<p>
-			<input type="text" name="Height">
+			<input type="text" name="height">
 		</p>
 		<p>
-			<input type="text" name="Width">
+			<input type="text" name="width">
 		</p>
-		<input type="button" value="Click" onclick="chessDeck(form)">
+		<button type="button" onclick="chessDeck(form.width.value, form.height.value)">
+			Draw chessboard
+		</button>
 	</form>
-	<p id="demo">
-    </p>
+	<table border='1' id="chessBoard"></table>
+	<!-- <p id="demo">
+    </p> -->
 	<script>
-		function chessDeck(form){
-			var height = form.Height.value;
-			var widht = form.Width.value;
-			var arr = [];
-			var firstPoint = "*"; 
-			var secondPoint = "#";
-			var point = "*";
-			for (var i = 0; i < height; i++) {
-				arr[i] = [];
-				for (var j = 0; j < widht; j++) {
-					arr[i][j] = point;
-					if (point == firstPoint)
-						point = secondPoint;
-					else if (point == secondPoint)
-						point = firstPoint;
-				}
-				if (widht % 2 == 0)
-					point = (point == firstPoint ? secondPoint : firstPoint);
-				else
-					point = (point == firstPoint ? firstPoint : secondPoint);
+		function chessDeck(width, height){
+			var table = '';
+
+			for (var i = 1; i <= width; i++) {
+				table += '<tr>';
+					for (var j = 1; j <= height; j++) {
+							var color = (i + j) % 2 ? 'white' : 'black';
+							table += '<td bgcolor="' + color + '" width="20" height="20"></td>';
+					}
+				table += '</tr>';
 			}
-			var inn = "";
-			for (var i = 0; i < height; i++) {
-				for (var j = 0; j < widht; j++) {
-					inn = inn + arr[i][j] + "|";
-				}
-				inn +=  "<br>";
-			}
-			document.getElementById("demo").innerHTML = inn;;
+
+			document.getElementById('chessBoard').innerHTML = table;
+			// var arr = [];
+			// var firstPoint = "*";
+			// var secondPoint = "#";
+			// var point = "*";
+			// for (var i = 0; i < height; i++) {
+			// 	arr[i] = [];
+			// 	for (var j = 0; j < widht; j++) {
+			// 		arr[i][j] = point;
+			// 		if (point == firstPoint)
+			// 			point = secondPoint;
+			// 		else if (point == secondPoint)
+			// 			point = firstPoint;
+			// 	}
+			// 	if (widht % 2 == 0)
+			// 		point = (point == firstPoint ? secondPoint : firstPoint);
+			// 	else
+			// 		point = (point == firstPoint ? firstPoint : secondPoint);
+			// }
+			// var inn = "";
+			// for (var i = 0; i < height; i++) {
+			// 	for (var j = 0; j < widht; j++) {
+			// 		inn = inn + arr[i][j] + "|";
+			// 	}
+			// 	inn +=  "<br>";
+			// }
+			// document.getElementById("demo").innerHTML = inn;;
 		}
 	</script>
 </body>
