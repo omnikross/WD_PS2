@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<form>
+		<p>
+			<input type="text" name="first_string">
+		</p>
+		<p>
+			<input type="text" name="second_string">
+		</p>
+		<button type="button"  onclick="string(form)">
+			Match
+		</button>
+	</form>
+	<pre id="result"></pre>
+	<script type="text/javascript">
+		function string(form) {
+			var firstString = form.first_string.value;
+			var secondString = form.second_string.value;
+			var data = {};
+			(firstString + secondString).toLowerCase().replace(/[^a-z]+/g, '').split('').forEach(function(str) {
+				data[str] = true;
+			});
+			var result = Object.keys(data).sort().join('');
+			console.log(result);
+		}
+	</script>
+</body>
+</html>
